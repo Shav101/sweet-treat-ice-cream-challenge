@@ -2,7 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* background: linear-gradient(#f9e5c8 70%, #e7bb8f 30%); */
+  background-color: beige;
+  background: linear-gradient(#f9e5c8 70%, #e7bb8f 30%);
 }
 
 /* 

@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   background: linear-gradient(#f9e5c8 60%, #e7bb8f 40%);
+  overflow: hidden;
 }
 
 * {
@@ -24,6 +25,8 @@ body {
 
 /* .menu-board ul {
 } */
+
+/* ============================ TABLE ============================ */
 
 .left-box {
   width: 300px;
@@ -119,7 +122,7 @@ body {
   right: -18%;
   transform: rotate(-73deg);
 }
-
+/* ============================ WINDOW ============================ */
 .window {
   width: 704px;
   height: 185px;
@@ -132,6 +135,7 @@ body {
   background: rgba(255, 255, 255, 0.55);
 }
 
+/* ============================ TABLE ============================ */
 .box4 {
   width: 1000px;
   height: 50px;
@@ -144,7 +148,7 @@ body {
   background-color: #3e2723;
 }
 
-/* ICE CREAM FLAVORS */
+/* ============================ ICE CREAM FLAVORS ============================*/
 
 .ice-creams {
   width: 120px;
@@ -161,6 +165,46 @@ body {
   left: calc(5.5%);
   background-color: white;
 }
+
+.toggle-box {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.toggle-label {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px 0;
+  font-weight: bold;
+  border-radius: 8px;
+  rotate: -90deg;
+  translate: right 25px;
+}
+.flavor-list {
+  display: none;
+  background-color: #fff0f5;
+  margin: 0 0 10px 20px;
+  padding: 10px;
+  rotate: -90deg;
+}
+/* Show the flavor list when the checkbox is checked */
+.toggle-box:checked + .toggle-label + .flavor-list {
+  display: block;
+  border: 5px solid black;
+}
+.toggle-vanilla {
+  display: none;
+}
+.toggle-vanilla:checked {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 50%;
+  background: white;
+  height: 200px;
+  width: 200px;
+}
+
 .ice-creams1 {
   width: 120px;
   height: 70px;
@@ -238,14 +282,6 @@ body {
   background-color: #add8e6;
 }
 
-/* .hr3 {
-  width: 680px;
-  border: 4px solid rgb(61, 60, 60);
-  position: absolute;
-  top: -74%;
-  right: 25.2%;
-} */
-/* ======================== */
 .ice-creams6 {
   width: 120px;
   height: 70px;
@@ -294,6 +330,8 @@ body {
   background-color: #ffb6c1;
 }
 
+/* ============================ REGISTER ============================ */
+
 .register {
   width: 110px;
   height: 60px;
@@ -313,35 +351,7 @@ body {
   border-radius: 5px;
 }
 
-/* .floor {
-  width: 100%;
-  height: 300px;
-  border: 1px solid;
-  position: relative;
-  top: 650px;
-  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(
-      #1d1d1d 25%,
-      #1a1a1a 25%,
-      #1a1a1a 50%,
-      transparent 50%,
-      transparent 75%,
-      #242424 75%,
-      #242424
-    );
-  background-color: #131313;
-  background-size: 20px 20px;
-  z-index: -100;
-} */
-
-/* PIGGY BANK */
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
-
+/* ============================ PIGGY BANK ============================*/
 .piggy-wrapper {
   position: absolute;
   width: 45px;
@@ -398,7 +408,7 @@ body {
   display: none;
 }
 
-.nose {
+.piggy-nose {
   position: absolute;
   top: 10px;
   left: -4px;
@@ -409,7 +419,7 @@ body {
   z-index: 1;
 }
 
-.mouth {
+.piggy-mouth {
   position: absolute;
   top: 12px;
   left: -3px;
@@ -422,7 +432,7 @@ body {
   border-radius: 4px;
 }
 
-.ear {
+.piggy-ear {
   position: absolute;
   top: -5px;
   left: 10px;
@@ -446,13 +456,13 @@ body {
   z-index: -1;
 }
 
-.tail {
+.piggy-tail {
   position: absolute;
   left: 95%;
   top: 16px;
 }
 
-.tail span {
+.piggy-tail span {
   position: absolute;
   width: 2px;
   height: 1px;
@@ -460,13 +470,13 @@ body {
   transform: rotate(30deg);
 }
 
-.tail span:nth-child(2),
-.tail span:nth-child(3),
-.tail span:nth-child(4) {
-  display: none; /* Too tiny for tail curls */
+.piggy-tail span:nth-child(2),
+.piggy-tail span:nth-child(3),
+.piggy-tail span:nth-child(4) {
+  display: none;
 }
 
-.eye {
+.piggy-eye {
   position: absolute;
   left: 5px;
   top: 10px;
@@ -492,7 +502,7 @@ body {
   }
 }
 
-.hole {
+.piggy-hole {
   position: absolute;
   left: 16px;
   top: 0;
@@ -504,10 +514,10 @@ body {
 }
 
 .coin-wrap {
-  display: none; /* Too small to animate coin */
+  display: none;
 }
 
-.legs {
+.piggy-legs {
   position: absolute;
   bottom: 2px;
   left: 25%;
@@ -518,7 +528,7 @@ body {
   z-index: 1;
 }
 
-.legs:after {
+.piggy-legs:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -530,11 +540,11 @@ body {
   opacity: 0.5;
 }
 
-.legs.back {
+.piggy-legs.back {
   left: 55%;
 }
 
-/* ICE CREAM CONE */
+/* ============================ ICE CREAM CONE ============================*/
 :root {
   --cone-color: #ffc57a;
   --waffle-color: #f59918;
@@ -642,7 +652,7 @@ body {
 
 .cone5 {
   position: absolute;
-  top: 560px;
+  bottom: 488.5%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -661,7 +671,7 @@ body {
 
 .cone6 {
   position: absolute;
-  top: 575px;
+  bottom: 585.9%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -680,7 +690,7 @@ body {
 
 .cone7 {
   position: absolute;
-  top: 590px;
+  bottom: 683.5%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -698,7 +708,7 @@ body {
 }
 .cone8 {
   position: absolute;
-  top: 605px;
+  bottom: 780.7%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -716,7 +726,7 @@ body {
 }
 .cone9 {
   position: absolute;
-  top: 620px;
+  bottom: 878%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -731,4 +741,214 @@ body {
     var(--waffle-color) 25px
   );
   clip-path: polygon(45% 100%, 55% 100%, 100% 0, 0 0);
+}
+
+/* ============================ PERSON ============================*/
+.canvas {
+  --line: #222;
+  --skin: #fca;
+  --skin-dark: #eb9;
+  --skin-light: #fdb;
+  --shirt: #fff;
+  color: var(--line);
+  width: 30vmin;
+  height: 30vmin;
+  position: absolute;
+  bottom: 35%;
+  left: 55%;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.canvas div {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.face {
+  top: 13%;
+  left: 50%;
+  width: 40%;
+  height: 50%;
+  background: #fca;
+  border: 1vmin solid;
+  border-radius: 0 20% 50% 70% / 50%;
+  box-shadow: -0.125vmin 0.25vmin, inset -1.5vmin 0.5vmin var(--skin-light),
+    inset 3vmin 0.5vmin var(--skin-dark);
+  transform: translate(-50%, 0);
+}
+
+.ear {
+  width: 35%;
+  height: 40%;
+  background: var(--skin-dark);
+  border-radius: 70% 70% 40% 90% / 50% 50% 100% 90%;
+  border: 1vmin solid;
+  border-right-color: var(--skin-dark);
+  top: 34%;
+  transform: rotate(-5deg);
+  left: -25%;
+  box-shadow: -0.25vmin -0.25vmin;
+}
+
+.ear::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  top: 20%;
+  left: 8%;
+  border: 0.25vmin solid transparent;
+  border-top: 1vmin solid;
+  transform: rotate(15deg);
+}
+
+.mouth {
+  width: 50%;
+  height: 20%;
+  border-radius: 50%;
+  border: 0.5vmin solid transparent;
+  border-left: 1.5vmin solid transparent;
+  border-bottom: 1vmin solid;
+  transform: rotate(10deg);
+  top: 60%;
+  left: 35%;
+}
+
+.nose {
+  width: 20%;
+  height: 14%;
+  border-radius: 50%;
+  top: 53%;
+  left: 55%;
+  box-shadow: 0.5vmin -0.5vmin, 0.5vmin -0.35vmin,
+    inset -0.75vmin 0.65vmin var(--skin-light);
+  border: 0.5vmin solid transparent;
+  border-top: 0.5vmin solid;
+  border-right: 0.5vmin solid;
+}
+
+.eyebrow {
+  width: 38%;
+  height: 15%;
+  border-radius: 100% / 50%;
+  top: 25%;
+  left: 20%;
+  box-shadow: -0.25vmin -2vmin 0 -0.5vmin;
+  transform: rotate(-5deg);
+}
+
+.eyebrow + .eyebrow {
+  transform: scaleX(-1) rotate(-3deg);
+  left: 68%;
+  width: 35%;
+}
+
+.eye {
+  width: 10%;
+  height: 10%;
+  background: var(--line);
+  border-radius: 50%;
+  top: 35%;
+  left: 37%;
+  background-image: radial-gradient(circle at 70% 20%, #fff 15%, transparent 0);
+  background-repeat: no-repeat;
+}
+
+.eye + .eye {
+  left: 77%;
+  top: 35.25%;
+}
+
+.hair-side {
+  width: 40%;
+  height: 50%;
+  background: var(--line);
+  border-radius: 100% / 90% 60% 150% 150%;
+  left: -35%;
+  top: -5%;
+  transform: rotate(-10deg);
+  box-shadow: 2.25vmin -1vmin var(--skin-dark);
+}
+
+.hair-top {
+  width: 145%;
+  height: 35%;
+  background: var(--line);
+  border-radius: 50% 120% 120% 50% / 100%;
+  top: -30%;
+  left: -30%;
+}
+
+.hair-back {
+  width: 20%;
+  height: 30%;
+  background: var(--line);
+  border-radius: 100% / 90% 90% 100% 100%;
+  left: 52%;
+  top: 5%;
+  transform: rotate(-5deg);
+}
+
+.ear-back {
+  width: 13%;
+  height: 18%;
+  border-radius: 50% 80% 90% 90%;
+  border: 1vmin solid;
+  background: var(--skin);
+  top: 27%;
+  left: 60%;
+}
+
+.neck {
+  width: 22%;
+  height: 26%;
+  border: 1vmin solid;
+  border-radius: 100% / 0 0 40% 40%;
+  border-left: 1.25vmin solid;
+  background: var(--skin);
+  background-image: radial-gradient(
+      circle at 100% -60%,
+      var(--skin-dark) 60%,
+      transparent 0
+    ),
+    linear-gradient(to left, var(--skin-light) 1vmin, transparent 0),
+    linear-gradient(to right, var(--skin-dark) 2vmin, transparent 0);
+  top: 51.5%;
+  left: 46%;
+  transform: translate(-50%, 0);
+}
+
+.body {
+  width: 84%;
+  height: 90%;
+  background: var(--shirt);
+  border: 1vmin solid;
+  border-radius: 100% / 35% 40% 120% 100%;
+  top: 72%;
+  left: 45%;
+  transform: translate(-50%, 0);
+  box-shadow: -0.25vmin -0.5vmin;
+}
+
+.arm {
+  width: 20%;
+  height: 30%;
+  border: 1vmin solid transparent;
+  border-left: 1.5vmin solid;
+  background: #f007;
+  border-radius: 120% 0 0 0;
+  top: 80%;
+  left: -8.5%;
+  background: var(--shirt);
+  box-shadow: 1vmin 10vmin;
+}
+
+.arm.arm-back {
+  border-right: 1vmin solid;
+  box-shadow: none;
+  border-radius: 0 120% 0 0;
+  left: 75%;
 }

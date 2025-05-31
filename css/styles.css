@@ -10,24 +10,30 @@ body {
   padding: 0;
 }
 
-.menu-board {
+.board-container {
   width: 900px;
   height: 300px;
   border: 5px solid;
   border-radius: 10%;
   padding: 20px;
+  display: flex;
   position: absolute;
   left: calc(25.5%);
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: white;
   border-color: black;
 }
 
-.ice-cream-menu {
+.ice-cream-title {
+  position: absolute;
+  left: calc(28%);
+  margin-top: 0;
+  align-items: center;
   text-align: center;
+  font-size: 40px;
 }
 
-.ice-cream-menu {
+.ice-cream-title {
   animation-name: menu-glow;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -47,11 +53,46 @@ body {
   }
 }
 
-.menu-board ul {
+/* ============================ MENU ============================ */
+.flavor-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: calc(33.5%);
+  top: 80px;
+  font-size: 30px;
+}
+
+.list-of-flavors-one {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: calc(27%);
+  top: 86px;
+  font-size: 20px;
+}
+.list-of-flavors-one,
+.list-of-flavors-two {
   list-style: none;
 }
 
+.list-of-flavors-two {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: calc(38%);
+  bottom: 49px;
+  font-size: 20px;
+}
+
 /* ============================ TABLE ============================ */
+
+.table {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0px;
+  position: relative;
+}
 
 .left-box {
   width: 300px;
@@ -59,9 +100,10 @@ body {
   border: 5px solid;
   border-radius: 10% 10% 0 10%;
   padding: 20px;
+  display: flex;
   position: absolute;
-  left: calc(11%);
-  margin-top: 660px;
+  left: calc(10.8%);
+  margin-top: 360px;
   background: linear-gradient(#5b3924 63%, #3e2723 37%);
   border-color: black;
 }
@@ -72,6 +114,7 @@ body {
   border: 5px solid;
   border-radius: 10% 10% 0 0;
   padding: 20px;
+  display: flex;
   position: absolute;
   left: calc(7.7%);
   margin-top: 44px;
@@ -102,9 +145,10 @@ body {
   height: 270px;
   border: 5px solid;
   padding: 20px;
+  display: flex;
   position: absolute;
   left: calc(26.4%);
-  margin-top: 610px;
+  margin-top: 310px;
   background: linear-gradient(#5b3924 63%, #3e2723 37%);
 }
 .table-box-white {
@@ -112,6 +156,7 @@ body {
   height: 23px;
   border: 5px solid;
   padding: 20px;
+  display: flex;
   position: absolute;
   left: calc(6%);
   margin-top: 10px;
@@ -125,8 +170,8 @@ body {
   border-radius: 10% 10% 10% 0;
   padding: 20px;
   position: absolute;
-  left: calc(72.1%);
-  margin-top: 660px;
+  left: calc(72.5%);
+  margin-top: 360px;
   background: linear-gradient(#5b3924 63%, #3e2723 37%);
 }
 
@@ -154,6 +199,7 @@ body {
   border: 5px solid;
   border-radius: 35% 35% 0 0;
   padding: 20px;
+  display: flex;
   position: absolute;
   left: calc(5.9%);
   margin-top: -160px;
@@ -169,7 +215,7 @@ body {
   padding: 20px;
   position: absolute;
   left: calc(23%);
-  margin-top: 570px;
+  margin-top: 280px;
   background-color: #3e2723;
 }
 /* ===============================Toggle Boxes=============================== */
@@ -370,9 +416,10 @@ body {
   height: 60px;
   background: #444;
   position: absolute;
-  top: 515px;
+  top: 246.4px;
   right: 580px;
   border-radius: 5px;
+  z-index: 1;
 }
 .register1 {
   width: 70px;
@@ -389,9 +436,10 @@ body {
   position: absolute;
   width: 45px;
   height: 45px;
-  top: 533px;
+  top: 541px;
   right: 540px;
   margin: 0 auto;
+  z-index: 1;
 }
 
 .piggy-wrap {
@@ -591,7 +639,7 @@ body {
 
 .cone {
   position: absolute;
-  top: 560px;
+  top: 260px;
   width: 80px;
   height: 110px;
   left: 280px;
@@ -610,7 +658,7 @@ body {
 
 .cone1 {
   position: relative;
-  bottom: 25px;
+  bottom: 325px;
   width: 80px;
   height: 110px;
   left: 280px;
@@ -628,8 +676,8 @@ body {
 }
 
 .cone2 {
-  position: relative;
-  bottom: 611px;
+  position: absolute;
+  bottom: 233.3%;
   width: 80px;
   height: 110px;
   left: 280px;
@@ -647,7 +695,7 @@ body {
 }
 .cone3 {
   position: relative;
-  bottom: 199%;
+  bottom: 249%;
   width: 80px;
   height: 110px;
   left: 280px;
@@ -664,8 +712,8 @@ body {
   clip-path: polygon(45% 100%, 55% 100%, 100% 0, 0 0);
 }
 .cone4 {
-  position: absolute;
-  bottom: 378%;
+  position: relative;
+  bottom: 346%;
   width: 80px;
   height: 110px;
   left: 280px;
@@ -683,8 +731,8 @@ body {
 }
 
 .cone5 {
-  position: absolute;
-  bottom: 488.5%;
+  position: relative;
+  bottom: 456.7%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -702,8 +750,8 @@ body {
 }
 
 .cone6 {
-  position: absolute;
-  bottom: 585.9%;
+  position: relative;
+  bottom: 554%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -721,8 +769,8 @@ body {
 }
 
 .cone7 {
-  position: absolute;
-  bottom: 683.5%;
+  position: relative;
+  bottom: 651.3%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -739,8 +787,8 @@ body {
   clip-path: polygon(45% 100%, 55% 100%, 100% 0, 0 0);
 }
 .cone8 {
-  position: absolute;
-  bottom: 780.7%;
+  position: relative;
+  bottom: 749%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -757,8 +805,8 @@ body {
   clip-path: polygon(45% 100%, 55% 100%, 100% 0, 0 0);
 }
 .cone9 {
-  position: absolute;
-  bottom: 878%;
+  position: relative;
+  bottom: 846%;
   width: 80px;
   height: 110px;
   left: 390px;
@@ -1013,7 +1061,7 @@ body {
     transform: translate(1200px);
   }
   90% {
-    transform: translate(1200px);
+    transform: translate(1900px);
   }
   to {
     transform: translate(1900px);
@@ -1391,6 +1439,7 @@ body {
 }
 .dark1 {
 }
+
 .dark1::after {
   content: "";
   position: absolute;

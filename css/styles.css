@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   background: linear-gradient(#f9e5c8 60%, #e7bb8f 40%);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 * {
@@ -10,87 +10,209 @@ body {
   padding: 0;
 }
 
-.board-container {
-  width: 900px;
-  height: 300px;
-  border: 5px solid;
-  border-radius: 10%;
+/* ============================ MENU BOARD ============================ */
+.menu-board-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   padding: 20px;
-  display: flex;
-  position: absolute;
-  left: calc(25.5%);
-  margin-top: 10px;
-  background-color: white;
-  border-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.1);
 }
 
-.ice-cream-title {
-  position: absolute;
-  left: calc(28%);
-  margin-top: 0;
-  align-items: center;
+.menu-board {
+  width: 900px;
+  background: #4a3428;
+  border-radius: 25px;
+  padding: 35px;
+  box-shadow: 0 8px 32px rgba(74, 52, 40, 0.4);
+  border: 8px solid #8B4513;
+  position: relative;
+  pointer-events: auto;
+  margin-top: -40px;
+}
+
+.menu-title {
   text-align: center;
-  font-size: 40px;
-}
-
-.ice-cream-title {
-  animation-name: menu-glow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
-}
-
-@keyframes menu-glow {
-  0% {
-    text-shadow: 0 0 5px red;
-  }
-  50% {
-    text-shadow: 0 0 5px green;
-  }
-  100% {
-    text-shadow: 0 0 5px blue;
-  }
-}
-
-/* ============================ MENU ============================ */
-.flavor-title {
-  display: flex;
-  flex-direction: column;
+  font-size: 48px;
+  color: #ffd4a7;
+  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 212, 167, 0.7),
+               0 0 20px rgba(255, 212, 167, 0.5),
+               0 0 30px rgba(255, 212, 167, 0.3);
   position: relative;
-  left: calc(33.5%);
-  top: 80px;
-  font-size: 30px;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
-.list-of-flavors-one {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: calc(27%);
-  top: 86px;
-  font-size: 20px;
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 212, 167, 0.7),
+                 0 0 20px rgba(255, 212, 167, 0.5),
+                 0 0 30px rgba(255, 212, 167, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 212, 167, 0.9),
+                 0 0 30px rgba(255, 212, 167, 0.7),
+                 0 0 40px rgba(255, 212, 167, 0.5),
+                 0 0 50px rgba(255, 212, 167, 0.3);
+  }
 }
-.list-of-flavors-one,
-.list-of-flavors-two {
+
+.menu-title::after {
+  content: '🍨';
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 15px;
+}
+
+.menu-title::before {
+  content: '🍨';
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+  margin-left: -50px;
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 15px;
+  width: 100%;
   list-style: none;
 }
 
-.list-of-flavors-two {
+.menu-content li a {
+  text-decoration: none;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(145deg, #5c4434, #3d2e23);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #8B4513;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  left: calc(38%);
-  bottom: 49px;
-  font-size: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  justify-content: flex-start;
+  min-width: 150px;
+  color: #ffd4a7;
+  font-size: 12px;
 }
+
+.menu-content li a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+  border-color: #ffd4a7;
+  background: linear-gradient(145deg, #6c5444, #4d3e33);
+}
+
+/* Style for the emojis */
+.menu-content li a::before {
+  content: attr(data-emoji);
+  font-size: 15px;
+  margin-right: 8px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+
+.menu-content li a::after {
+  content: attr(data-price);
+  background: #ffd4a7;
+  color: #4a3428;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 11px;
+  margin-left: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.menu-content li:last-child a {
+  background: linear-gradient(145deg, #ff6b6b, #ff4757);
+  border-color: #ff4757;
+  grid-column: span 3;
+  justify-content: center;
+  padding: 4px 8px;
+}
+
+.menu-content li:last-child a:hover {
+  background: linear-gradient(145deg, #ff7b7b, #ff5767);
+  border-color: #ff5767;
+}
+
+.menu-board::before,
+.menu-board::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #8B4513;
+  border-radius: 50%;
+  border: 3px solid #ffd4a7;
+}
+
+.menu-board::before {
+  top: -20px;
+  left: -20px;
+}
+
+.menu-board::after {
+  top: -20px;
+  right: -20px;
+}
+
+.menu-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 3px dashed #8B4513;
+  color: #ffd4a7;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Ice cream cone decorations */
+.corner-cone {
+  position: absolute;
+  bottom: -20px;
+  width: 40px;
+  height: 40px;
+  background: #8B4513;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border: 2px solid #ffd4a7;
+}
+
+.corner-cone-left {
+  left: 40px;
+  transform: rotate(180deg);
+}
+
+.corner-cone-right {
+  right: 40px;
+  transform: rotate(180deg);
+}
+
 
 /* ============================ TABLE ============================ */
 
 .table {
   display: flex;
   flex-direction: row;
-  margin-top: 0px;
+  margin-top: 350px;
   position: relative;
 }
 
@@ -170,7 +292,7 @@ body {
   border-radius: 10% 10% 10% 0;
   padding: 20px;
   position: absolute;
-  left: calc(72.5%);
+  left: calc(72.2%);
   margin-top: 360px;
   background: linear-gradient(#5b3924 63%, #3e2723 37%);
 }
@@ -220,32 +342,6 @@ body {
 }
 /* ===============================Toggle Boxes=============================== */
 
-.toggle-box {
-  display: none;
-  width: 100%;
-  height: 100%;
-  z-index: index 0;
-}
-
-.toggle-label {
-  display: block;
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px 0;
-  font-weight: bold;
-  border-radius: 8px;
-  rotate: -90deg;
-  translate: right 25px;
-}
-
-.flavor-list {
-  display: none;
-  background-color: #fff0f5;
-  margin: 0 0 10px 20px;
-  padding: 10px;
-  rotate: -90deg;
-}
-
 /* ============================ ICE CREAM FLAVORS ============================*/
 
 .ice-creams {
@@ -261,7 +357,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(5.5%);
-  background-color: white;
+  background-color: #fff5e6; /* Vanilla */
 }
 
 /* Show the flavor list when the checkbox is checked */
@@ -297,7 +393,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(13%);
-  background-color: chocolate;
+  background-color: #6b3e26; /* Chocolate */
 }
 
 .ice-creams2 {
@@ -313,7 +409,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(20.4%);
-  background-color: #ffc0cb;
+  background-color: #ff8fa3; /* Strawberry */
 }
 .ice-creams3 {
   width: 120px;
@@ -328,7 +424,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(28%);
-  background-color: #dda0dd;
+  background-color: #98ff98; /* Mint */
 }
 .ice-creams4 {
   width: 120px;
@@ -343,7 +439,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(35.5%);
-  background-color: #98fb98;
+  background: linear-gradient(45deg, #4a2c2a, #6b4c4a); /* Coffee */
 }
 .ice-creams5 {
   width: 120px;
@@ -358,7 +454,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(43%);
-  background-color: #add8e6;
+  background: linear-gradient(45deg, #c68e17, #e6b325); /* Caramel */
 }
 
 .ice-creams6 {
@@ -374,7 +470,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(50.4%);
-  background-color: #add8e6;
+  background: linear-gradient(45deg, #4169e1, #1e90ff); /* Blueberry */
 }
 
 .ice-creams7 {
@@ -390,7 +486,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(57.9%);
-  background-color: #c98b5d;
+  background: linear-gradient(45deg, #ff69b4, #87ceeb); /* Cotton Candy */
 }
 
 .ice-creams8 {
@@ -406,7 +502,7 @@ body {
   position: absolute;
   bottom: 47px;
   left: calc(65.4%);
-  background-color: #ffb6c1;
+  background: linear-gradient(45deg, #f5f5f5, #3c3c3c); /* Cookies & Cream */
 }
 
 /* ============================ REGISTER ============================ */
@@ -436,7 +532,7 @@ body {
   position: absolute;
   width: 45px;
   height: 45px;
-  top: 541px;
+  top: 614px;
   right: 540px;
   margin: 0 auto;
   z-index: 1;
@@ -834,7 +930,7 @@ body {
   width: 30vmin;
   height: 30vmin;
   position: absolute;
-  bottom: 35%;
+  bottom: 31%;
   left: 55%;
   overflow: hidden;
   z-index: -100;
@@ -1039,17 +1135,18 @@ body {
   position: absolute;
   bottom: 50px;
   left: 0;
-  transform: scale(0.5);
+  transform: scale(0.1);
   transform-origin: bottom left;
   animation: bat-movement;
   animation-duration: 15s;
   animation-iteration-count: infinite;
-  animation-play-state: paused;
+  z-index: 1;
+  /* animation-play-state: paused; */
 }
 
 @keyframes bat-movement {
   from {
-    transform: translate(-100px);
+    transform: translate(-100px) scale(0.0999);
   }
   60% {
     transform: translate(1200px);
@@ -1634,30 +1731,7 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
-/* 
-@keyframes Floatingx {
-  from {
-    transform: translate(0, 0px);
-  }
-  65% {
-    transform: translate(0, 15px);
-  }
-  to {
-    transform: translate(0, -0px);
-  }
-}
 
-@keyframes Floating {
-  from {
-    transform: translate(0, 0px);
-  }
-  65% {
-    transform: translate(0, 15px);
-  }
-  to {
-    transform: translate(0, -0px);
-  }
-} */
 
 @keyframes eyeanimation {
   0% {
@@ -1705,4 +1779,210 @@ body {
   100.0% {
     background-color: #a7a29f;
   }
+}
+
+/* ====================
+   2.1) Hide left cone when its anchor is targeted
+   ==================== */
+#flavor-strawberry:target ~ .cones-scene .strawberry-left {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#flavor-chocolate:target ~ .cones-scene .chocolate-left {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* ====================
+   2.2) Animate right cone into view when its anchor is targeted
+   ==================== */
+.cone-cone {
+  position: absolute;
+  width: 90px;
+  height: 140px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.cone-cone::before {
+  content: "";
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cone-cone::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 70px solid #ffc57a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffc57a,
+    #ffc57a 5px,
+    #f59918 5px,
+    #f59918 10px
+  );
+}
+
+/* Show strawberry scoop + cone on the right when #flavor-strawberry is targeted */
+#flavor-strawberry:target ~ .cones-scene .right-display .strawberry {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#flavor-chocolate:target ~ .cones-scene .right-display .chocolate {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* 2.3) Scoop colors for the right‐side cones */
+.strawberry::before {
+  background-color: #ff8fa3;
+}
+.chocolate::before {
+  background-color: #6b3e26;
+}
+
+/* ============================ ICE CREAM DISPLAY ============================ */
+.ice-cream-display {
+  position: absolute;
+  top: 600px;
+  right: 280px;
+  width: 150px;
+  height: 200px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Show ice cream cones when their anchors are targeted */
+#vanilla:target ~ .ice-cream-display .vanilla,
+#chocolate:target ~ .ice-cream-display .chocolate,
+#strawberry:target ~ .ice-cream-display .strawberry,
+#mint:target ~ .ice-cream-display .mint,
+#coffee:target ~ .ice-cream-display .coffee,
+#caramel:target ~ .ice-cream-display .caramel,
+#blueberry:target ~ .ice-cream-display .blueberry,
+#cotton-candy:target ~ .ice-cream-display .cotton-candy,
+#cookies:target ~ .ice-cream-display .cookies,
+#pistachio:target ~ .ice-cream-display .pistachio,
+#rocky-road:target ~ .ice-cream-display .rocky-road {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cone-cone {
+  position: absolute;
+  width: 90px;
+  height: 140px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.cone-cone::before {
+  content: "";
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cone-cone::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 70px solid #ffc57a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffc57a,
+    #ffc57a 5px,
+    #f59918 5px,
+    #f59918 10px
+  );
+}
+
+/* Ice cream colors */
+.vanilla::before { background-color: #fff5e6; }
+.chocolate::before { background-color: #6b3e26; }
+.strawberry::before { background-color: #ff8fa3; }
+.mint::before { background-color: #98ff98; }
+.coffee::before { background: linear-gradient(45deg, #4a2c2a, #6b4c4a); }
+.caramel::before { background: linear-gradient(45deg, #c68e17, #e6b325); }
+.blueberry::before { background: linear-gradient(45deg, #4169e1, #1e90ff); }
+.cotton-candy::before { background: linear-gradient(45deg, #ff69b4, #87ceeb); }
+.cookies::before { background: linear-gradient(45deg, #f5f5f5, #3c3c3c); }
+.pistachio::before { background: linear-gradient(45deg, #93c572, #77dd77); }
+.rocky-road::before { background: linear-gradient(45deg, #6b3e26, #d2691e); }
+
+/* Hide the anchor targets */
+#vanilla, #chocolate, #strawberry, #mint,
+#coffee, #caramel, #blueberry, #cotton-candy,
+#cookies, #pistachio, #rocky-road, #none {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+/* ============================ MENU BUTTONS ============================ */
+
+/* Show ice cream cones when their anchors are targeted */
+#vanilla:target ~ .ice-cream-display .vanilla,
+#chocolate:target ~ .ice-cream-display .chocolate,
+#strawberry:target ~ .ice-cream-display .strawberry,
+#mint:target ~ .ice-cream-display .mint,
+#coffee:target ~ .ice-cream-display .coffee,
+#caramel:target ~ .ice-cream-display .caramel,
+#blueberry:target ~ .ice-cream-display .blueberry,
+#cotton-candy:target ~ .ice-cream-display .cotton-candy,
+#cookies:target ~ .ice-cream-display .cookies,
+#pistachio:target ~ .ice-cream-display .pistachio,
+#rocky-road:target ~ .ice-cream-display .rocky-road {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.coffee::before {
+  background: linear-gradient(45deg, #4a2c2a, #6b4c4a);
+}
+
+.caramel::before {
+  background: linear-gradient(45deg, #c68e17, #e6b325);
+}
+
+.cookies::before {
+  background: linear-gradient(45deg, #f5f5f5, #3c3c3c);
+}
+
+.pistachio::before {
+  background: linear-gradient(45deg, #93c572, #77dd77);
+}
+
+.rocky-road::before {
+  background: linear-gradient(45deg, #6b3e26, #d2691e);
 }

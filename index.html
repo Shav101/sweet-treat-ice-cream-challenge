@@ -7,29 +7,25 @@
     <title>Ice Cream Shop</title>
   </head>
   <body>
-<section class="board-container">
-  <div class="back-board">
-    <h2 class="ice-cream-title">ICE CREAM MENU</h2>
-  </div>
-</section>
 <section class="menu-container">
-  <div class="menu-board">
-    <h2 class="flavor-title">Flavor</h2>
-    <ul class="list-of-flavors-one">
-      <li>🍦 Vanilla - $2.50</li>
-      <li>🍫 Chocolate - $2.75</li>
-      <li>🍓 Strawberry - $2.75</li>
-      <li>🍇 Grape - $2.50</li>
-      <li>🌿 Mint - $2.75</li>
-    </ul>
-  </div>
-  <div>
-    <ul class="list-of-flavors-two">
-      <li>🫐 Blueberry - $2.75</li>
-      <li>🍬 Cotton Candy - $3.00</li>
-      <li>🍊 Sherbet - $2.50</li>
-      <li>🍭 Bubblegum - $3.00</li>
-    </ul>
+  <div class="menu-board-container">
+    <div class="menu-board">
+      <h1 class="menu-title">Sweet Treats</h1>
+      <ul class="menu-content">
+        <li><a href="#vanilla" data-emoji="🍦" data-price="$2.50">Vanilla</a></li>
+        <li><a href="#chocolate" data-emoji="🍫" data-price="$2.75">Chocolate</a></li>
+        <li><a href="#strawberry" data-emoji="🍓" data-price="$2.75">Strawberry</a></li>
+        <li><a href="#mint" data-emoji="🌿" data-price="$2.75">Mint</a></li>
+        <li><a href="#coffee" data-emoji="☕" data-price="$2.75">Coffee</a></li>
+        <li><a href="#caramel" data-emoji="🍯" data-price="$2.75">Caramel</a></li>
+        <li><a href="#blueberry" data-emoji="🫐" data-price="$2.75">Blueberry</a></li>
+        <li><a href="#cotton-candy" data-emoji="🍬" data-price="$3.00">Cotton Candy</a></li>
+        <li><a href="#cookies" data-emoji="🍪" data-price="$3.00">Cookies & Cream</a></li>
+        <li><a href="#pistachio" data-emoji="🥜" data-price="$3.00">Pistachio</a></li>
+        <li><a href="#rocky-road" data-emoji="🍫" data-price="$3.00">Rocky Road</a></li>
+        <li><a href="#none" data-emoji="❌">Clear Selection</a></li>
+      </ul>
+    </div>
   </div>
 </section>
     <!-- TABLE -->
@@ -62,48 +58,30 @@
       <div class="box4">
         <!-- Vanilla -->
         <div class="ice-creams">
-          <input type="checkbox" id="toggle-vanilla" class="toggle-box vanilla-flavor">
-          <label for="toggle-vanilla" class="toggle-label"></label>
       </div>
       <!-- Chocolate -->
       <div class="ice-creams1">
-        <input type="checkbox" id="toggle-chocolate" class="toggle-box chocolate-flavor">
-          <label for="toggle-chocolate" class="toggle-label"></label>
       </div>
       <!-- Strawberry -->
       <div class="ice-creams2">
-        <input type="checkbox" id="toggle-strawberry" class="toggle-box strawberrry-flavor">
-          <label for="toggle-strawberry" class="toggle-label"></label>
       </div>
       <!-- Grape -->
       <div class="ice-creams3">
-        <input type="checkbox" id="toggle-grape" class="toggle-box grape-flavor">
-          <label for="toggle-grape" class="toggle-label"></label>
       </div>
       <!-- Mint -->
       <div class="ice-creams4">
-        <input type="checkbox" id="toggle-mint" class="toggle-box mint-flavor">
-          <label for="toggle-mint" class="toggle-label"></label>
       </div>
       <!-- Blueberry -->
       <div class="ice-creams5">
-        <input type="checkbox" id="toggle-blueberry" class="toggle-box blueberry-flavor">
-          <label for="toggle-blueberry" class="toggle-label"></label>
       </div>
       <!-- Cotton Candy -->
       <div class="ice-creams6">
-        <input type="checkbox" id="toggle-cotton-candy" class="toggle-box cotton-candy-flavor">
-          <label for="toggle-cotton-candy" class="toggle-label"></label>
       </div>
       <!-- Sherbert -->
       <div class="ice-creams7">
-        <input type="checkbox" id="toggle-sherbert" class="toggle-box sherbert-flavor">
-          <label for="toggle-sherbert" class="toggle-label"></label>
       </div>
       <!-- Bubblegum -->
       <div class="ice-creams8">
-        <input type="checkbox" id="toggle-bubblegum" class="toggle-box bubblegum-flavor">
-          <label for="toggle-bubblegum" class="toggle-label"></label>
       </div>
       <div>
         <hr class="hr3" />
@@ -112,6 +90,36 @@
       </div>
       </div>
     </section>
+    <!-- FLAVORS -->
+
+<!-- Hidden anchors -->
+<span id="vanilla"></span>
+<span id="chocolate"></span>
+<span id="strawberry"></span>
+<span id="mint"></span>
+<span id="coffee"></span>
+<span id="caramel"></span>
+<span id="blueberry"></span>
+<span id="cotton-candy"></span>
+<span id="cookies"></span>
+<span id="pistachio"></span>
+<span id="rocky-road"></span>
+<span id="none"></span>
+
+<!-- Ice cream display container -->
+<div class="ice-cream-display">
+  <div class="cone-cone vanilla"></div>
+  <div class="cone-cone chocolate"></div>
+  <div class="cone-cone strawberry"></div>
+  <div class="cone-cone mint"></div>
+  <div class="cone-cone coffee"></div>
+  <div class="cone-cone caramel"></div>
+  <div class="cone-cone blueberry"></div>
+  <div class="cone-cone cotton-candy"></div>
+  <div class="cone-cone cookies"></div>
+  <div class="cone-cone pistachio"></div>
+  <div class="cone-cone rocky-road"></div>
+</div>
     <!-- PIGGY -->
     <section>
       <div class="piggy-wrapper">

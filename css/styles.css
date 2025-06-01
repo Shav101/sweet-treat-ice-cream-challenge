@@ -70,7 +70,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: 15px;
+  margin-left: -5px;
 }
 
 .menu-title::before {
@@ -335,7 +335,6 @@ body {
   margin-top: 280px;
   background-color: #3e2723;
 }
-/* ===============================Toggle Boxes=============================== */
 
 /* ============================ ICE CREAM FLAVORS ============================*/
 
@@ -353,26 +352,6 @@ body {
   bottom: 47px;
   left: calc(5.5%);
   background-color: #fff5e6; /* Vanilla */
-}
-
-/* Show the flavor list when the checkbox is checked */
-.toggle-box:checked + .toggle-label + .flavor-list {
-  display: block;
-  border: 5px solid black;
-}
-.toggle-vanilla {
-  display: none;
-}
-.toggle-vanilla:checked {
-  display: flex;
-  border: 1px solid black;
-  border-radius: 50%;
-  background: black;
-  height: 200px;
-  width: 200px;
-}
-.toggle-vanilla:checked .toggle-label {
-  display: none;
 }
 
 .ice-creams1 {
@@ -1771,77 +1750,6 @@ body {
   }
 }
 
-#flavor-strawberry:target ~ .cones-scene .strawberry-left {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-#flavor-chocolate:target ~ .cones-scene .chocolate-left {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-/* RIGHT SIDE CONE APPEAR */
-.cone-cone {
-  position: absolute;
-  width: 90px;
-  height: 140px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-.cone-cone::before {
-  content: "";
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.cone-cone::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 45px solid transparent;
-  border-right: 45px solid transparent;
-  border-top: 70px solid #ffc57a;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    #ffc57a,
-    #ffc57a 5px,
-    #f59918 5px,
-    #f59918 10px
-  );
-}
-
-/* STRAWBERRY FLAVOR */
-#flavor-strawberry:target ~ .cones-scene .right-display .strawberry {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-#flavor-chocolate:target ~ .cones-scene .right-display .chocolate {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.strawberry::before {
-  background-color: #ff8fa3;
-}
-.chocolate::before {
-  background-color: #6b3e26;
-}
-
 /* ============================ ICE CREAM DISPLAY ============================ */
 .ice-cream-display {
   position: absolute;
@@ -1909,7 +1817,7 @@ body {
   );
 }
 
-/* Ice cream colors */
+/* Ice cream flavors */
 .vanilla::before {
   background-color: #fff5e6;
 }
@@ -1960,43 +1868,4 @@ body {
   pointer-events: none;
   position: absolute;
   visibility: hidden;
-}
-
-/* ============================ MENU BUTTONS ============================ */
-
-/* ICE CREAM FLAVOR WILL APPEAR WHEN ITS CLICKED */
-#vanilla:target ~ .ice-cream-display .vanilla,
-#chocolate:target ~ .ice-cream-display .chocolate,
-#strawberry:target ~ .ice-cream-display .strawberry,
-#mint:target ~ .ice-cream-display .mint,
-#coffee:target ~ .ice-cream-display .coffee,
-#caramel:target ~ .ice-cream-display .caramel,
-#blueberry:target ~ .ice-cream-display .blueberry,
-#cotton-candy:target ~ .ice-cream-display .cotton-candy,
-#cookies:target ~ .ice-cream-display .cookies,
-#pistachio:target ~ .ice-cream-display .pistachio,
-#rocky-road:target ~ .ice-cream-display .rocky-road {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.coffee::before {
-  background: linear-gradient(45deg, #4a2c2a, #6b4c4a);
-}
-
-.caramel::before {
-  background: linear-gradient(45deg, #c68e17, #e6b325);
-}
-
-.cookies::before {
-  background: linear-gradient(45deg, #f5f5f5, #3c3c3c);
-}
-
-.pistachio::before {
-  background: linear-gradient(45deg, #93c572, #77dd77);
-}
-
-.rocky-road::before {
-  background: linear-gradient(45deg, #6b3e26, #d2691e);
 }

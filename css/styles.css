@@ -1104,6 +1104,66 @@ body {
 }
 
 /* ============================ CUSTOMER - ONE ============================ */
+.chatBubble {
+	position: relative;
+	background: #ffffff;
+	color: #333;
+	padding: 15px 20px;
+	border-radius: 30px;
+	margin: 10px;
+	max-width: 60%;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	display: inline-block;
+	opacity: 0; /* Hidden by default */
+	transform: translateX(20px); /* Slide in from the right */
+}
+
+.chatBubble::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -12px;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-left-color: #ffffff;
+}
+
+#batmansGreeting {
+	animation: appearThenDisappear 8s forwards;
+	animation-delay: 5s;
+}
+
+#batmansAnswer {
+	animation: appearThenDisappear 8s forwards;
+	animation-delay: 7s;
+}
+
+@keyframes appearThenDisappear {
+	0% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	62.5% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	65% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	87.5% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+}
 
 /* ================================ Batman ================================ */
 .bat-container {

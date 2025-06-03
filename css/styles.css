@@ -2,6 +2,7 @@ body {
 	height: 100vh;
 	background: linear-gradient(#f9e5c8 60%, #e7bb8f 40%);
 	overflow: hidden;
+	max-width: 1920px;
 }
 
 * {
